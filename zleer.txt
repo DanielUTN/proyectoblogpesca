@@ -1,0 +1,12 @@
+para correr el proyecto
+python manage.py runserver
+
+para instalar los requeriments
+pip install -r requirements.txt
+
+para realizar la migracion de base de datos:
+python manage.py migrate
+
+cuando empezamos con django:
+django-admin startproject
+

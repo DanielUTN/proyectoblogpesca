@@ -1,0 +1,84 @@
+.listaIntegrantes
+{
+    cursor:pointer;
+    color: black;
+}
+.listaIntegrantes:hover
+{
+    color: cadetblue;
+
+}
+.userspan
+{
+  color:rebeccapurple;
+}
+.usernamespan
+{
+  color:blue;
+}
+.blogPost
+{
+    background-color: rgb(236, 234, 244);
+    margin: 2px 5px 2px 5px ;
+    padding: 0px 5px 2px 5px;
+    border-radius: 5px;
+}
+.blogContainer
+{
+    padding: 2px 5px 5px 5px;
+}
+.blogFecha
+{
+    float:right;
+    font-size: smaller;
+}
+.blogFirma{
+    text-align:right;
+    font-size:larger;
+    font-weight: bold;
+    color: gray;
+
+}
+
+.homepage{
+	display: block;
+    margin: 0 auto;
+}
+
+/* Estilo para el contenedor de los posts */
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Estilo para cada post */
+  .post {
+    border: 2px solid #ccc;
+    background-color: rgb(57, 119, 130);
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888;
+    width: calc(33.33% - 20px); /* Asegura que haya tres columnas en una fila */
+    box-sizing: border-box;
+  }
+  .postc {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888;
+    width: calc(50% - 20px); /* Asegura que haya tres columnas en una fila */
+    box-sizing: border-box;
+  }
+  /* Otras propiedades de estilo, como fuentes y colores, según tus preferencias */
+  .post h2 {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .post p {
+    font-size: 1em;
+    color: #666;
+  }
+  

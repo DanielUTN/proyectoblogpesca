@@ -1,0 +1,182 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>{% block titulo %}{% endblock titulo %}</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/6504f30b95.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}"> <img class="LOGO-main" src="{% static 'images/logo.png' %}" alt=""
+                        width="40" height="40">Big Fish Blog</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Blog</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'somos' %}">Quienes Somos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'nosotros' %}">Trabaja con Nosotros</a>
+                        </li>
+
+
+                    </ul>
+
+                    <form class="d-flex" role="search" action="{% url 'Buscar' %}" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Posts..." aria-label="Search" name="Buscar">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+
+
+                    {% if user.is_authenticated %}
+                        <span class='userspan'>Usuario:<span class='usernamespan'>{{request.user.username}}</span></span>
+                        <div class="d-flex">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"></li>
+                                <a class="btn btn-outline-success" href="{% url 'crear_post' %}">Crear Entrada</a>
+                            </li>
+                        </ul>
+                        </div>
+
+                        <div class="d-flex">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"></li>
+                                <a class="btn btn-outline-success" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        </ul>
+                        </div>
+
+                    {% else %}
+                        <div class="d-flex">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"></li>
+                                <a class="btn btn-outline-success" href="{% url 'login' %}">Login</a>
+                            </li>
+                        </ul>
+                        </div>
+
+                    {% endif %}
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block contenido %}
+
+
+
+
+        {% endblock contenido %}
+    </main>
+
+    <footer class="text-center text-lg-start bg-light text-muted">
+
+
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Nuestra Mision
+                        </h6>
+                        <p>
+                            Nuestra misión es ofrecer un punto de reunion para los fanaticos de la caza y la pesca.
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Redes
+                        </h6>
+                        <p>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </p>
+                        <p>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </p>
+                        <p>
+                            <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </p>
+                        <p>
+                            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Links Utiles
+                        </h6>
+                        <p>
+                            <a href="{% url 'somos' %}" class="text-reset">Quienes Somos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amigos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ayuda</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">FAQ</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p><i class="fas fa-home me-3"></i>Buenos Aires, Argentina</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            bigfishblog@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 11 22334455</p>
+                        <p><i class="fas fa-print me-3"></i> + 11 00998877</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center p-4" style="background-color: rgba(234,233,230,1);">
+            © 2023 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">bigfishblog.com.ar</a>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+
+</html>

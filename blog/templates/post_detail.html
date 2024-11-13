@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  Detalles
+{% endblock %}
+
+{% block contenido %}
+<style>
+  body {
+    background-image: url("{% static 'images/1.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+  .post-detail {
+    border: 2px solid #ccc;
+    background-color: rgb(221, 248, 225);
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888;
+    max-height: none;
+    overflow: visible;
+    transition: none;
+    border-radius: 8px;
+    text-align: center;
+  }
+</style>
+
+
+<head>
+    
+</head>
+<body>
+    <div class="post-detail">
+        <h2>{{ post.titulo }}</h2>
+        <p>{{ post.contenido | safe }}</p>
+        <p class='autorpost'>Autor: {{ post.autor }}</p>
+        <p> Etiquetas:
+            {%for e in etiquetas %}
+              {%if forloop.counter > 1 %} - {% endif %}
+              <a class='etiqueta' href={% url 'etiquetas' e.id %}>#{{e.desc}}</a>  
+            {% endfor %}
+        </p>
+        <!-- Formulario de comentarios -->
+        <hr>
+        <h2>Comentarios</h2>
+        <div class='comentario_list'>
+          {% for comentario in comentarios %}
+            <div class='comentario'>
+            <p class='comentario_autor'>{{comentario.autor}}</p>
+            {{comentario.contenido}}
+            <p></p>
+            <span class='comentario_fecha'>{{comentario.fecha}}</span>
+            
+            </div>
+            <hr>
+          {% endfor %}
+        </div>
+        <h3>Deja tu comentario:</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <input type="submit" value="Comentar!" class="btn btn-outline-success">
+        </form>
+        
+
+
+        <!-- Resto del código de comentarios -->
+        <!-- ... -->
+    </div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,171 @@
+.listaIntegrantes
+{
+    cursor:pointer;
+    color: black;
+}
+.listaIntegrantes:hover
+{
+    color: cadetblue;
+
+}
+.autorpost
+{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-style:italic;
+}
+.userspan
+{
+  color:black;
+  font-weight: bold;
+  padding: 5px;
+}
+.usernamespan
+{
+  padding: 5px;
+  color: rgb(5, 105, 103);
+  font-weight: bold;
+}
+.blogPost
+{
+    background-color: rgb(236, 234, 244);
+    margin: 2px 5px 2px 5px ;
+    padding: 0px 5px 2px 5px;
+    border-radius: 5px;
+}
+.blogContainer
+{
+    padding: 2px 5px 5px 5px;
+}
+.blogFecha
+{
+    float:right;
+    font-size: smaller;
+}
+.blogFirma{
+    text-align:right;
+    font-size:larger;
+    font-weight: bold;
+    color: gray;
+
+}
+
+.homepage{
+	display: block;
+    margin: 0 auto;
+}
+
+/* Estilo para el contenedor de los posts */
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.etiqueta
+{
+  color: rebeccapurple;
+}
+.etiqueta:hover
+{
+  font-weight: bolder;
+  color: purple;
+}
+.comentario
+{
+  background-color:rgb(169, 231, 190);
+  
+  color: rgb(12, 0, 0);
+  text-align: left;
+  padding: 5px 10px 20px;
+  margin: 20px;
+}
+.comentario_autor{
+  font-size: 1.25rem;
+  color: rgb(8, 0, 0);
+}
+.comentario_fecha
+{
+  float:right;
+  font-size: smaller;
+}
+
+
+/* Estilo de Posts y limita la altura máxima de los posts a 200px y oculta el exceso */
+.post {
+  border: 2px solid #ccc;
+  background-color: rgb(221, 248, 225);
+  /*background-color: #ffff99;*/
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888;
+  width: calc(33.33% - 20px);
+  #box-sizing: border-box;
+  max-height: 200px;
+  overflow: hidden;
+  transition: all 0.25s;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.postc {
+  border: 2px solid #ccc;
+  background-color: rgb(138, 47, 47);
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  max-height: 200px;
+  overflow: hidden;
+  transition: all 0.25s;
+  border-radius: 8px;
+  text-align: center;
+}
+/* Estilo para el botón "Leer más" */
+.read-more-button {
+  display: none; /* Inicialmente oculto */
+  color: #95c6e7; /* Cambia el color a tu preferencia */
+  font-weight: 500; /* Cambia el peso de la fuente a tu preferencia */
+  text-decoration: none;
+}
+
+/* Estilo para el botón "Leer más" cuando el contenido está expandido */
+.post.expanded .read-more-button {
+  display: block;
+}
+
+/* Cambia el estilo de tu título y texto según tus preferencias */
+.post h2 {
+  font-size: 1.5em;
+  color: #333;
+  font-weight: 600;
+}
+
+.post p {
+  font-size: 1em;
+  color: #666;
+  font-weight: 300;
+}
+
+/* Estilo para el hover de los posts */
+.post:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Agrega un estilo para la fecha y la firma */
+.blogFecha {
+  font-size: smaller;
+  float: right;
+}
+
+.blogFirma {
+  text-align: right;
+  font-size: larger;
+  font-weight: bold;
+  color: gray;
+}
+
+
+
+  
